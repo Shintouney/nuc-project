@@ -18,5 +18,13 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-				$(CC)	-c -o $(NAME)
+$(NAME): $(OBJS)
+				$(CC)	-o $(NAME) $(SRCS)
+
+clean:
+				$(RM) $(OBJS)
+
+fclean: clean
+				$(RM) $(NAME)
+
+re: fclean all
